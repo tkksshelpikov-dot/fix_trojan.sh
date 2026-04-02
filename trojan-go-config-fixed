@@ -1,0 +1,29 @@
+{
+  "run_type": "server",
+  "local_addr": "127.0.0.1",
+  "local_port": 8080,
+  "remote_addr": "127.0.0.1",
+  "remote_port": 80,
+  "password": [
+    "f5jy/1+kiBuHtY0DK5qeGg=="
+  ],
+  "ssl": {
+    "cert": "/etc/trojan-go/server.crt",
+    "key": "/etc/trojan-go/server.key",
+    "alpn": ["http/1.1"],
+    "fingerprint": "chrome"
+  },
+  "websocket": {
+    "enabled": true,
+    "path": "/telegram"
+  },
+  "mux": {
+    "enabled": true
+  },
+  "router": {
+    "enabled": true,
+    "bypass": ["geoip:private"],
+    "proxy": ["domain:telegram.org"],
+    "default_policy": "proxy"
+  }
+}
